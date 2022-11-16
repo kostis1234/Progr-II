@@ -1,1 +1,59 @@
-το βλεπετε ολοι?
+	import java.util.ArrayList;
+	import java.util.List;
+	import java.util.Scanner;
+
+	public class LoginMenu {
+
+	private static List<User> initialize() {
+
+		List<User> users = new ArrayList<>();
+
+		users.add(new User("admin", "password"));
+
+		return users;
+
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		List<User> users = initialize();
+		
+
+		while (true) {
+			System.out.println("Main Menu");
+			System.out.println("Type 1 for register");
+			System.out.println("Type 2 for login");
+			System.out.println("Type 3 for ektypwsh xrhstwn");
+			System.out.println("Tyoe 4 for exodos");
+			int epilogh = sc.nextInt();
+			if (epilogh == 1) {
+				System.out.println("Eggrafeite ws:");
+				System.out.println("1: User");
+				if (epilogh2 == 1) {
+					User user = new User();
+					user.register(sc);
+					users.add(user);
+					
+
+				
+
+			}
+			else if (epilogh ==3) {
+				for(int i =0; i< users.size();i++) {
+					System.out.println(users.get(i));
+				}
+			}
+			
+			else if (epilogh == 4) {
+				System.out.println("Kalo brady");
+//				System.exit(0);
+//				break;
+				return;
+			}
+
+		}
+		
+	}
+	}
+}
