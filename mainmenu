@@ -1,14 +1,15 @@
-	import java.util.ArrayList;
-	import java.util.List;
-	import java.util.Scanner;
 
-	public class LoginMenu {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-	private static List<User> initialize() {
+public class LoginMenu {
 
-		List<User> users = new ArrayList<>();
+	private static List<UsersErgasia> initialize() {
 
-		users.add(new User("admin", "password"));
+		List<UsersErgasia> users = new ArrayList<>();
+
+		users.add(new UsersErgasia("admin", "password"));
 
 		return users;
 
@@ -17,43 +18,68 @@
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		List<User> users = initialize();
-		
+		List<UsersErgasia> users = initialize();
+		boolean loggedIn = false;
 
 		while (true) {
-			System.out.println("Main Menu");
-			System.out.println("Type 1 for register");
-			System.out.println("Type 2 for login");
-			System.out.println("Type 3 for ektypwsh xrhstwn");
-			System.out.println("Tyoe 4 for exodos");
-			int epilogh = sc.nextInt();
-			if (epilogh == 1) {
-				System.out.println("Eggrafeite ws:");
-				System.out.println("1: User");
-				if (epilogh2 == 1) {
-					User user = new User();
+
+			if (!loggedIn) {
+				System.out.println("Main Menu");
+				System.out.println("Type 1 for register");
+				System.out.println("Type 2 for login");
+				System.out.println("Type 3 for ektypwsh xrhstwn");
+				System.out.println("Tyoe 4 for exodos");
+				int epilogh = sc.nextInt();
+				if (epilogh == 1) {
+					UsersErgasia user = new UsersErgasia();
 					user.register(sc);
 					users.add(user);
-					
 
-				
+				} else if (epilogh == 2) {
 
-			}
-			else if (epilogh ==3) {
-				for(int i =0; i< users.size();i++) {
-					System.out.println(users.get(i));
+					System.out.println("Dwse userID ");
+					String userId = sc.next();
+
+					System.out.println("Dwse password ");
+					String password = sc.next();
+
+					for (int i = 0; i < users.size(); i++) {
+
+						UsersErgasia us = users.get(i);
+
+						loggedIn = us.login(userId, password);
+						if (loggedIn) {
+							break;
+						}
+					}
+
+					if (loggedIn) {
+						System.out.println("Synde8ikate epityxws");
+
+					} else {
+						continue;
+					}
 				}
-			}
-			
-			else if (epilogh == 4) {
-				System.out.println("Kalo brady");
-//				System.exit(0);
-//				break;
-				return;
+
+				else if (epilogh == 4) {
+					System.out.println("Kalo brady");
+//					System.exit(0);
+//					break;
+					return;
+				}
+			} else {
+				System.out.println("Menu2");
+				System.out.println("1: epe3ergasia profil");
+				System.out.println("2: Return to Main Menu");
+				int epilogh = sc.nextInt();
+
+				if (epilogh == 2) {
+					loggedIn = false;
+				}
+
 			}
 
 		}
-		
-	}
+
 	}
 }
