@@ -69,11 +69,12 @@ public class LoginMenu {
 				}
 			} else {
 				System.out.println("Menu2");
-				System.out.println("1: epe3ergasia profil");
-				System.out.println("2: Return to Main Menu");
+				System.out.println("Type 1 to read Messages");
+				System.out.println("Type 2 to send Messages");
+				System.out.println("Type 3 to return to Main Menu");
 				int epilogh = sc.nextInt();
 
-				if (epilogh == 2) {
+				if (epilogh == 3) {
 					loggedIn = false;
 				}
 
