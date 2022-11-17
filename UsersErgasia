@@ -1,21 +1,22 @@
+
 import java.util.Scanner;
+
 public class UsersErgasia {
 	protected String userId;
 	protected String password;
-	
-	public User() {
+
+	public UsersErgasia() {
 		super();
-		active = true;
 
 	}
 
-	public User(String userId, String password) {
+	public UsersErgasia(String userId, String password) {
 		super();
 		this.userId = userId;
 		this.password = password;
 	}
 
-	 String getUserId() {
+	String getUserId() {
 		return userId;
 	}
 
@@ -33,7 +34,7 @@ public class UsersErgasia {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", password=" + password + "]" ;
+		return "User [userId=" + userId + ", password=" + password + "]";
 	}
 
 	public boolean login(String id, String pass) {
