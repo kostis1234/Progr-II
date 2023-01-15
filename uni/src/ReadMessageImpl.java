@@ -15,7 +15,7 @@ public class ReadMessageImpl implements ReadMessageService {
             }
             while (line != null) {
                 System.out.println(line);
-                System.out.println("Do you want to like the message?Yes/No");
+                System.out.println("Do you want to like the message? *If so type Yes*");
                 Scanner obj = new Scanner(System.in);
                 String answer = obj.nextLine();
                 //Ignoring caps case.
