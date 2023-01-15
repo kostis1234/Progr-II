@@ -2,6 +2,10 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
+import java.io.IOException;
+import java.util.Objects;
+import java.util.Scanner;
+
 public class Controller {
     public static LoginImpl login = new LoginImpl();
     public static RegisterServiceImpl registerService = new RegisterServiceImpl();
@@ -15,8 +19,10 @@ public class Controller {
         String username = null;
         boolean done = true;
         while (done) {
-            System.out.println("*To login type 1" +
-                    "\n*To register type 2");
+            System.out.println("""
+                    *To login type 1
+                    *To register type 2
+                    *To shut down the app type 3""");
             String answer2 = obj2.nextLine();
             if (Objects.equals(answer2, "1")) {
                 success = login.login();
@@ -26,7 +32,9 @@ public class Controller {
                 success = registerService.register();
                 username = RegisterServiceImpl.getName();
                 done = false;
-            } else {
+            } else if(Objects.equals(answer2,"3")) {
+                done = false;
+            }else{
                 System.out.println("Non existing answer;try again!");
             }
         }
