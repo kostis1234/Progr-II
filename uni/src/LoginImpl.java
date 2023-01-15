@@ -45,6 +45,12 @@ public class LoginImpl implements LoginInterface {
                     end = false;
                 } else {
                     System.out.println("Sorry;wrong password!");
+                    System.out.println("Do you want to try again? *If so type yes*");
+                    Scanner obj1 = new Scanner(System.in);
+                    String answer = obj1.nextLine();
+                    if(!answer.equalsIgnoreCase("yes")){
+                        end = false;
+                    }
                 }
             }
         }
