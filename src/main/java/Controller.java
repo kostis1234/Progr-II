@@ -15,10 +15,9 @@ public class Controller {
         String username = null;
         boolean done = true;
         while (done) {
-            System.out.println("""
-                    *To login type 1
-                    *To register type 2
-                    *To shut down the app type 3""");
+            System.out.println("To login type 1");
+            System.out.println("To register type 2");
+            System.out.println("To shut down the app type 3");
             String answer2 = obj2.nextLine();
             if (Objects.equals(answer2, "1")) {
                 success = login.login();
