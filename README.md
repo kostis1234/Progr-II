@@ -38,10 +38,10 @@ java CreationOfFiles &
 java Controller
 
 Παρουσίασης δομής του repository:
-Φάκελος:.idea 
-Φάκελος:.src/main/java με περιεχόμενο τις κλάσεις και τον κώδικά μας
-LICENSE για την πιστοποίηση του κώδικά μας
-readMe με τεχνικές πληροφορίες του κώδικα
+Φάκελος:.idea, 
+Φάκελος:.src/main/java με περιεχόμενο τις κλάσεις και τον κώδικά μας,
+LICENSE για την πιστοποίηση του κώδικά μας,
+readMe με τεχνικές πληροφορίες του κώδικα,
 pom.xml αρχείο MAVEN
 
 ![umldiagramm](https://user-images.githubusercontent.com/117856133/212740652-82752e51-b523-44df-9b27-b046162f65e9.png)
